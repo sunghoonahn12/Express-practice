@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/web-n/Nodejs#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "sanitize-html": "^1.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
