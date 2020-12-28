@@ -5,6 +5,8 @@ var fs = require('fs')
 var sanitizeHtml = require('sanitize-html');
 var template = require('../lib/template.js');
 
+
+// do not need /topic path because it is already defined in main.js
 router.get('/create', (request, response) => {
     var title = 'WEB - create';
     var list = template.list(request.list);
