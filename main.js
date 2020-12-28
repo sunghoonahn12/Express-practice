@@ -6,9 +6,11 @@ var path = require('path');
 var sanitizeHtml = require('sanitize-html');
 var qs = require('querystring');
 var bodyParser = require('body-parser')
+var compression = require('compression')
 var port = 3000
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(compression());
 
 app.get('/', (request, response) => {
   fs.readdir('./data', function(error, filelist){
@@ -122,8 +124,8 @@ app.post('/delete_process', (request, response) => {
     var filteredId = path.parse(id).base;
     fs.unlink(`data/${filteredId}`, function(error){
       response.redirect('/')
-    })
-})
+    });
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
